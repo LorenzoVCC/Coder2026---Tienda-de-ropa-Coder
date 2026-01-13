@@ -22,16 +22,16 @@
 
 /*///////////////////////////////////////////////////////////
 /*Header - ESTRUCTURA GENERICA */
-.header-main-container {
-    background-color: rgb(63, 124, 94);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 140px;
+
+header {
+    overflow-x: hidden;
+
 }
 
-.header-main-container a {
+
+.header-main-container>a {
     text-decoration: none;
+    grid-area: logo;
 }
 
 /*Logo*/
@@ -39,7 +39,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    letter-spacing: 10px;
+    letter-spacing: 6px;
     background-color: orange;
     padding-left: 30px;
 }
@@ -55,19 +55,28 @@
 
 /*Menú Derecho*/
 .header-navmenu-login {
+    grid-area: menu;
+    justify-self: end;
+
     display: flex;
-    justify-content: space-between;
-    gap: 80px;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 20px;
     padding: 20px;
     font-size: 20px;
-    align-items: center;
+    min-width: 0;
 }
+
 
 .header-navmenu-login ul {
     list-style: none;
     display: flex;
-    gap: 50px;
+    flex-wrap: wrap;
+    gap: 30px;
     font-size: 12px;
+    min-width: 0;
 }
 
 .header-navmenu-login ul a {
@@ -83,7 +92,7 @@
 
 .auth-buttons {
     display: flex;
-    gap: 30px
+    gap: 20px
 }
 
 button {
@@ -106,171 +115,444 @@ button:hover {
 /*///////////////////////////////////////////////////////////*/
 /* INDEX */
 
-main {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-
-/* Main content - Hero*/
-#hero {
-    padding: 150px;
-    transition: .5s;
-}
-
-#hero:hover {
-    background-color: rgb(230, 225, 225);
-}
-
-#hero h1 {
-    padding-bottom: 20px;
-    font-family: "LemonMedium";
-    letter-spacing: 5px;
-}
-
-#hero p {
-    padding-bottom: 50px;
-    font-family: "LemonLight";
-    letter-spacing: 3px;
-}
-
-#hero button {
-    width: 300px;
-    font-size: 15px;
+.header-main-container {
+    width: 100%;
     background-color: rgb(63, 124, 94);
-    color: white;
-    transition: .3s;
-}
 
-#hero button:hover {
-    background-color: rgb(111, 176, 142);
-    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.75);
-}
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "logo"
+        "menu";
 
-/* Main content - Destacados*/
-#destacados {
-    margin-top: 50px;
-    margin-bottom: 30px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-}
-
-#destacados h2 {
-    background-color: orange;
-    width: 340px;
-    padding-left: 5px;
-    color: white;
-    margin-left: 45px;
-}
-
-/*Div productos destacados */
-.productos-destacados {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 50px;
-}
-
-/*Card producto destacado */
-.producto {
-    font-family: "LemonLight";
-    background-color: rgb(63, 124, 94);
-    border: 1px solid black;
-    color: white;
-    width: 500px;
-    height: 530px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    transition: .3s;
-    cursor: pointer;
-    text-align: left;
-}
-
-.producto:hover {
-    background-color: rgb(85, 144, 113);
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-}
-
-.producto img {
-    height: 380px;
-    padding-bottom: 20px;
-}
-
-.price-n-kart {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
+    gap: 12px;
+
+    padding: 16px;
+    height: auto;
 }
 
-.price-n-kart button {
-    width: 200px;
+
+.header-main-container>a {
+    grid-area: logo;
+    text-decoration: none;
 }
 
-.linea-media {
-    background-color: black;
-    height: 3px;
-    width: 30%;
-    align-self: center;
-}
-
-#temporadas {
-    margin-top: 50px;
-    margin-bottom: 80px;
-    color: white;
+.main-logo {
     display: flex;
-    flex-direction: column;
-}
-
-#temporadas h2 {
-    background-color: orange;
-    color: white;
-    width: 180px;
-    margin-left: 25px;
-    margin-bottom: 20px;
-    display: flex;
+    align-items: center;
     justify-content: center;
+    gap: 10px;
+
+    letter-spacing: 4px;
+    background-color: orange;
+
+    padding: 12px 16px;
 }
 
-.temporadas-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 25px;
+.main-logo img {
+    height: 64px;
 }
 
-/* Temporada Card */
-.temporada {
-    border: 2px solid black;
-    width: 49.5%;
-    height: 450px;
-    display: flex;
-    background-color: rgb(63, 124, 94);
-    padding: 20px;
-    cursor: pointer;
-    transition: 0.3s;
+.main-logo h2 {
+    font-size: 18px;
+    color: white;
 }
 
-.temporada:hover {
-    background-color: rgb(85, 144, 113);
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-}
-
-.temporada img {
-    width: 400px;
-}
-
-.temporada-texto-container {
+.header-navmenu-login {
+    grid-area: menu;
     display: flex;
     flex-direction: column;
-    text-align: left;
-    gap: 20px;
-    width: 90%;
-    padding: 20px;
+    width: 100%;
+    gap: 12px;
+    padding: 0;
 }
 
+.header-navmenu-login ul {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    font-size: 12px;
+}
+
+/********************************************************************************************/
+/********************************************************************************************/
+/********************************************************************************************/
+/********************************************************************************************/
+/* INDEX TABLET */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    /* Header */
+    .header-main-container {
+        grid-template-columns: auto minmax(0, 1fr);
+        grid-template-areas: "logo menu";
+        padding: 16px 20px;
+    }
+
+    .main-logo {
+        justify-content: flex-start;
+        padding: 12px 20px;
+    }
+
+    .main-logo img {
+        height: 80px;
+    }
+
+    .main-logo h2 {
+        font-size: 22px;
+    }
+
+    .header-navmenu-login {
+        flex-direction: row;
+        justify-self: end;
+        justify-content: flex-end;
+        gap: 18px;
+    }
+
+    .header-navmenu-login ul {
+        justify-content: flex-end;
+        gap: 22px;
+    }
+
+    /* Hero */
+    #hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "center right";
+        transition: 1s;
+        width: 100%;
+        height: clamp(320px, 50vh, 520px);
+        margin-top: 50px;
+        color: white;
+    }
+
+    .hero-img-left {
+        display: none;
+    }
+
+    .hero-img-center {
+        grid-area: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-image: url("../imgs/SweterNaranja-Hero.jpg");
+        background-size: cover;
+        background-position: center center;
+        padding-left: 60px;
+        font-size: 10px;
+    }
+
+    .hero-img-right {
+        grid-area: right;
+        height: 100%;
+        background-image: url("../imgs/RemeraBlanca-Hero.jpg");
+        background-size: cover;
+        background-position: center center;
+    }
+
+    #hero:hover {
+        background-color: rgb(230, 225, 225);
+    }
+
+    #hero h1 {
+        padding-bottom: 20px;
+        font-family: "LemonMedium";
+        letter-spacing: 5px;
+    }
+
+    #hero p {
+        padding-bottom: 50px;
+        font-family: "LemonLight";
+        letter-spacing: 3px;
+    }
+
+    #hero button {
+        width: min(300px, 90%);
+        font-size: 15px;
+        background-color: rgb(63, 124, 94);
+        color: white;
+        transition: .3s;
+    }
+
+    #hero button:hover {
+        background-color: rgb(111, 176, 142);
+        box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.75);
+    }
+
+    #destacados {
+        margin-top: 50px;
+        margin-bottom: 30px;
+        color: white;
+        display: grid;
+    }
+
+    #destacados h2 {
+        background-color: orange;
+        width: 285px;
+        padding-left: 5px;
+        color: white;
+        margin-left: 45px;
+        font-size: 20px;
+    }
+
+}
+
+/********************************************************************************************/
+/********************************************************************************************/
+/********************************************************************************************/
+/********************************************************************************************/
+/*******************************************************************************/
+/* INDEX DESKTOP */
+@media (min-width: 1024px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+
+    .header-main-container {
+        width: 100%;
+        background-color: rgb(63, 124, 94);
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        grid-template-areas: "logo menu";
+        align-items: center;
+        height: 140px;
+    }
+
+    .header-navmenu-login {
+        flex-direction: row;
+        justify-self: end;
+        justify-content: flex-end;
+        gap: 18px;
+    }
+
+    .header-navmenu-login ul {
+        justify-content: flex-end;
+        gap: 22px;
+    }
+
+    .auth-buttons {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Main content - Hero*/
+    #hero {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr 1fr;
+        grid-template-areas: "left center right";
+        transition: .5s;
+        width: 100%;
+        height: clamp(320px, 50vh, 520px);
+        margin-top: 50px;
+        color: white;
+    }
+
+    .hero-img-left {
+        grid-area: left;
+
+        background-image: url("../imgs/CamperaNegra-Hero.jpg");
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .hero-img-center {
+        grid-area: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        background-image: url("../imgs/SweterNaranja-Hero.jpg");
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .hero-img-right {
+        grid-area: right;
+
+        background-image: url("../imgs/RemeraBlanca-Hero.jpg");
+        background-size: cover;
+        background-position: center center;
+    }
+
+    #hero:hover {
+        background-color: rgb(230, 225, 225);
+    }
+
+    #hero h1 {
+        padding-bottom: 20px;
+        font-family: "LemonMedium";
+        letter-spacing: 5px;
+    }
+
+    #hero p {
+        padding-bottom: 50px;
+        font-family: "LemonLight";
+        letter-spacing: 3px;
+    }
+
+    #hero button {
+        width: min(300px, 90%);
+        font-size: 15px;
+        background-color: rgb(63, 124, 94);
+        color: white;
+        transition: .3s;
+    }
+
+    #hero button:hover {
+        background-color: rgb(111, 176, 142);
+        box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.75);
+    }
+
+    /* Main content - Destacados*/
+    #destacados {
+        margin-top: 50px;
+        margin-bottom: 30px;
+        color: white;
+        display: grid;
+    }
+
+
+    #destacados h2 {
+        background-color: orange;
+        width: 340px;
+        padding-left: 5px;
+        color: white;
+        margin-left: 45px;
+    }
+
+    /*Div productos destacados */
+    .productos-destacados {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 20px;
+        padding: clamp(16px, 4vw, 50px);
+        justify-items: center;
+    }
+
+    /*Card producto destacado */
+    .producto {
+        font-family: "LemonLight";
+        background-color: rgb(63, 124, 94);
+        border: 1px solid black;
+        color: white;
+
+        width: 100%;
+        max-width: 500px;
+        height: 530px;
+        padding: 20px;
+
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        transition: .3s;
+        cursor: pointer;
+    }
+
+    .producto:hover {
+        background-color: rgb(85, 144, 113);
+        box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    }
+
+    .producto img {
+        width: 100%;
+        height: clamp(220px, 30vw, 380px);
+        padding-bottom: 20px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .price-n-kart {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .price-n-kart button {
+        width: 200px;
+    }
+
+
+    #temporadas {
+        margin-top: 40px;
+        margin-bottom: 80px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #temporadas h2 {
+        background-color: orange;
+        color: white;
+        width: 180px;
+        margin-left: 25px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .temporadas-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 20px;
+        padding: clamp(16px, 4vw, 25px);
+    }
+
+    /* Temporada Card */
+    .temporada {
+        width: 100%;
+        min-width: 0;
+        height: 450px;
+
+        display: flex;
+        background-color: rgb(63, 124, 94);
+        padding: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+        border: 2px solid black;
+    }
+
+    .temporada:hover {
+        background-color: rgb(85, 144, 113);
+        box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    }
+
+    .temporada img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        display: block;
+    }
+
+    .temporada-texto-container {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        gap: 20px;
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+/********************************************************************************************/
+/********************************************************************************************/
+/********************************************************************************************/
+/********************************************************************************************/
+/********************************************************************************************/
+/********************************************************************************************/
+/********************************************************************************************/
+/*//////////////////////////////////////////////////////////////////////////////////////////////////
 /* FIN INDEX //////////////////////////////////////////////////////////////////////////////////////////////////*/
+
 
 /* Productos //////////////////////////////////////////////////////////////////////////////////////////////////*/
 #products-main {
@@ -526,6 +808,7 @@ span {
     background-repeat: no-repeat;
     width: 30%;
 }
+
 /* Fin Branches //////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 
@@ -551,6 +834,7 @@ span {
     justify-content: center;
     color: white;
 }
+
 #contact-main p {
     background-color: orange;
     width: 35%;
@@ -582,10 +866,13 @@ span {
     padding: 10px;
     color: white;
 }
-.datos-contact input, .datos-contact textarea {
+
+.datos-contact input,
+.datos-contact textarea {
     width: 60%;
     border: 1px solid black;
 }
+
 .datos-contact label {
     width: 20%;
     padding-left: 5px;
@@ -599,17 +886,18 @@ span {
     align-items: center;
     padding-bottom: 30px;
 }
-.radiobtns-container button { 
-    width: 30%;
-} 
 
-fieldset { 
+.radiobtns-container button {
+    width: 30%;
+}
+
+fieldset {
     color: white;
     width: 80%;
     padding: 10px;
 }
 
-legend { 
+legend {
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -618,32 +906,51 @@ legend {
 
 /* Footer - ESTRUCTURA GENERICA */
 footer {
-    border: 1px solid black;
-    background-color: rgb(63, 124, 94);
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1.2fr 2fr 1fr;
+    grid-template-areas: "copyright form social-media";
     align-items: center;
-    font-size: 10px;
-    padding: 40px;
+    padding: 50px 40px;
+    background-color: rgb(63, 124, 94);
+    width: 100%;
+    box-sizing: border-box;
     color: white;
+
+}
+
+footer p {
+    grid-area: copyright;
 }
 
 .footer-contacto {
-    width: 18%;
+    grid-area: form;
     display: flex;
-    justify-content: space-between;
+    gap: 10px;
+    justify-content: center;
+    min-width: 0;
 }
 
-footer input,
-footer button {
+.footer-contacto input {
+    width: 100%;
+    min-width: 0;
+    max-width: 320px;
+    border-radius: 20px;
+    border: none;
+    padding: 10px;
+}
+
+.footer-contacto button {
+    width: 100px;
     padding: 10px;
     border-radius: 20px;
     border: none;
 }
 
 .footer-redes {
-    width: 12%;
-    padding-right: 20px;
+    grid-area: social-media;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
 }
 
 .footer-redes img {
@@ -652,7 +959,10 @@ footer button {
 
 .footer-redes ul {
     display: flex;
-    justify-content: space-between;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .footer-redes ul li {
