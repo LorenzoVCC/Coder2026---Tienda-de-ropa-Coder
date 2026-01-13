@@ -20,32 +20,41 @@
     font-family: "LemonMedium", sans-serif;
 }
 
-/*///////////////////////////////////////////////////////////
-/*Header - ESTRUCTURA GENERICA */
+/*//////////////////////////////////////////////////////////*/
 
-header {
-    overflow-x: hidden;
+/* HEADER - CSS GENERICO*/
+.header-main-container {
+    height: auto;
+    width: 100%;
+    background-color: rgb(63, 124, 94);
 
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "logo"
+        "menu";
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
 }
-
 
 .header-main-container>a {
-    text-decoration: none;
     grid-area: logo;
+    text-decoration: none;
 }
 
-/*Logo*/
 .main-logo {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
     letter-spacing: 6px;
     background-color: orange;
-    padding-left: 30px;
+    padding: 12px 16px;
 }
 
 .main-logo img {
-    height: 100px;
+    height: 64px;
 }
 
 .main-logo h2 {
@@ -56,17 +65,13 @@ header {
 /*Menú Derecho*/
 .header-navmenu-login {
     grid-area: menu;
-    justify-self: end;
-
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
-
-    gap: 20px;
-    padding: 20px;
-    font-size: 20px;
-    min-width: 0;
+    width: 100%;
+    gap: 12px;
+    padding: 0;
+    font-size: 10px;
 }
 
 
@@ -74,9 +79,8 @@ header {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
     font-size: 12px;
-    min-width: 0;
+    gap: 14px;
 }
 
 .header-navmenu-login ul a {
@@ -112,96 +116,27 @@ button:hover {
     box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
-/*///////////////////////////////////////////////////////////*/
-/* INDEX */
 
-.header-main-container {
-    width: 100%;
-    background-color: rgb(63, 124, 94);
-
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-        "logo"
-        "menu";
-
-    align-items: center;
-    gap: 12px;
-
-    padding: 16px;
-    height: auto;
-}
-
-
-.header-main-container>a {
-    grid-area: logo;
-    text-decoration: none;
-}
-
-.main-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-
-    letter-spacing: 4px;
-    background-color: orange;
-
-    padding: 12px 16px;
-}
-
-.main-logo img {
-    height: 64px;
-}
-
-.main-logo h2 {
-    font-size: 18px;
-    color: white;
-}
-
-.header-navmenu-login {
-    grid-area: menu;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 12px;
-    padding: 0;
-}
-
-.header-navmenu-login ul {
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 14px;
-    font-size: 12px;
-}
 
 /********************************************************************************************/
 /********************************************************************************************/
 /********************************************************************************************/
-/********************************************************************************************/
-/* INDEX TABLET */
+/*****************************************************************************************/
+
 @media (min-width: 768px) and (max-width: 1023px) {
 
-    /* Header */
     .header-main-container {
+        display: grid;
         grid-template-columns: auto minmax(0, 1fr);
         grid-template-areas: "logo menu";
         padding: 16px 20px;
+        height: auto;
+        background-color: rgb(63, 124, 94);
     }
 
     .main-logo {
         justify-content: flex-start;
         padding: 12px 20px;
-    }
-
-    .main-logo img {
-        height: 80px;
-    }
-
-    .main-logo h2 {
-        font-size: 22px;
     }
 
     .header-navmenu-login {
@@ -281,31 +216,152 @@ button:hover {
         box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.75);
     }
 
+    /*******************/
+
+
+    /* Main content - Destacados*/
     #destacados {
-        margin-top: 50px;
+        margin-top: 80px;
         margin-bottom: 30px;
         color: white;
-        display: grid;
+    }
+
+    .title-flex {
+        /*Container para flexear el #destacados h2*/
+        display: flex;
+        justify-content: center;
     }
 
     #destacados h2 {
         background-color: orange;
-        width: 285px;
-        padding-left: 5px;
         color: white;
-        margin-left: 45px;
-        font-size: 20px;
+        width: 340px;
+        padding: 5px;
+        margin-left: 40px;
     }
 
+    /*Div productos destacados */
+    .productos-destacados {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 20px;
+        padding: clamp(16px, 4vw, 50px);
+        justify-items: center;
+    }
+
+    /*Card producto destacado */
+    .producto {
+        font-family: "LemonLight";
+        background-color: rgb(63, 124, 94);
+        border: 1px solid black;
+        color: white;
+        font-size: 15px;
+
+        height: auto;
+        width: 350px;
+        padding: 20px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        transition: .3s;
+        cursor: pointer;
+    }
+
+    .producto:hover {
+        background-color: rgb(85, 144, 113);
+        box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    }
+
+    .producto img {
+        width: 100%;
+        height: clamp(220px, 30vw, 380px);
+        padding-bottom: 20px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .price-n-kart {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .price-n-kart button {
+        width: 150px;
+        font-size: 10px;
+    }
+
+
+    /*******************/
+    /*SECCION CONTENEDORA DE TEMPORADAS* --- TABLET*/
+
+    #temporadas {
+        margin-top: 50px;
+        margin-bottom: 40px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #temporadas h2 {
+        background-color: orange;
+        color: white;
+        width: 180px;
+        margin-left: 25px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .temporadas-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        gap: 30px;
+        padding: clamp(16px, 4vw, 25px);
+    }
+
+    /* Temporada Card */
+    .temporada {
+        width: 100%;
+        min-width: 0;
+        height: 300px;
+        display: flex;
+        background-color: rgb(63, 124, 94);
+        padding: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+        border: 2px solid black;
+    }
+
+    .temporada:hover {
+        background-color: rgb(85, 144, 113);
+        box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    }
+
+    .temporada img {
+        width: 50%;
+        height: auto;
+        display: block;
+    }
+
+    .temporada-texto-container {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        gap: 20px;
+        width: 90%;
+        padding: 20px;
+    }
 }
 
 /********************************************************************************************/
-/********************************************************************************************/
-/********************************************************************************************/
-/********************************************************************************************/
 /*******************************************************************************/
-/* INDEX DESKTOP */
+
 @media (min-width: 1024px) {
+
+    /*INDEX DESKTOP*/
     main {
         display: flex;
         flex-direction: column;
@@ -321,6 +377,7 @@ button:hover {
         grid-template-areas: "logo menu";
         align-items: center;
         height: 140px;
+        padding: 10px;
     }
 
     .header-navmenu-login {
@@ -420,7 +477,6 @@ button:hover {
         display: grid;
     }
 
-
     #destacados h2 {
         background-color: orange;
         width: 340px;
@@ -445,10 +501,11 @@ button:hover {
         border: 1px solid black;
         color: white;
 
+        height: auto;
         width: 100%;
         max-width: 500px;
-        height: 530px;
         padding: 20px;
+        gap: 50px;
 
         display: flex;
         flex-direction: column;
@@ -460,6 +517,11 @@ button:hover {
     .producto:hover {
         background-color: rgb(85, 144, 113);
         box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    }
+
+    .product-data-container {
+        display: flex;
+        flex-direction: column;
     }
 
     .producto img {
@@ -474,7 +536,7 @@ button:hover {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-top: 20px;
+        margin-top: auto;
     }
 
     .price-n-kart button {
@@ -502,7 +564,7 @@ button:hover {
 
     .temporadas-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(620px, 1fr));
         gap: 20px;
         padding: clamp(16px, 4vw, 25px);
     }
@@ -512,13 +574,14 @@ button:hover {
         width: 100%;
         min-width: 0;
         height: 450px;
-
         display: flex;
-        background-color: rgb(63, 124, 94);
+        gap: 20px;
         padding: 20px;
-        cursor: pointer;
+
         transition: 0.3s;
+        cursor: pointer;
         border: 2px solid black;
+        background-color: rgb(63, 124, 94);
     }
 
     .temporada:hover {
@@ -527,8 +590,8 @@ button:hover {
     }
 
     .temporada img {
-        width: 100%;
-        max-width: 400px;
+        flex: 0 0 55%;
+        max-width: 45%;
         height: auto;
         display: block;
     }
@@ -543,9 +606,7 @@ button:hover {
     }
 }
 
-/********************************************************************************************/
-/********************************************************************************************/
-/********************************************************************************************/
+
 /********************************************************************************************/
 /********************************************************************************************/
 /********************************************************************************************/
@@ -904,67 +965,111 @@ legend {
 
 
 
-/* Footer - ESTRUCTURA GENERICA */
-footer {
-    display: grid;
-    grid-template-columns: 1.2fr 2fr 1fr;
-    grid-template-areas: "copyright form social-media";
-    align-items: center;
-    padding: 50px 40px;
-    background-color: rgb(63, 124, 94);
-    width: 100%;
-    box-sizing: border-box;
-    color: white;
+/* Footer - TABLET */
+@media (min-width: 768px) and (max-width: 1023px) {
+    footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "copyright social-media";
+        align-items: center;
+        padding: 40px;
+        background-color: rgb(63, 124, 94);
+        box-sizing: border-box;
+        color: white;
 
+    }
+
+    footer p {
+        grid-area: copyright;
+        font-size: 10px;
+    }
+
+    .footer-contacto {
+        display: none;
+    }
+
+    .footer-redes {
+        grid-area: social-media;
+        display: flex;
+        justify-self: end;
+    }
+
+    .footer-redes img {
+        height: 20px;
+    }
+
+    .footer-redes ul {
+        display: flex;
+        list-style: none;
+        gap: 12px;
+    }
 }
 
-footer p {
-    grid-area: copyright;
-}
 
-.footer-contacto {
-    grid-area: form;
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    min-width: 0;
-}
+@media (min-width: 1024px) {
 
-.footer-contacto input {
-    width: 100%;
-    min-width: 0;
-    max-width: 320px;
-    border-radius: 20px;
-    border: none;
-    padding: 10px;
-}
+    /*FOOTER DESKTOP*/
+    footer {
+        display: grid;
+        grid-template-columns: 1.2fr 2fr 1fr;
+        grid-template-areas: "copyright form social-media";
+        align-items: center;
+        padding: 50px 40px;
+        background-color: rgb(63, 124, 94);
+        width: 100%;
+        box-sizing: border-box;
+        color: white;
 
-.footer-contacto button {
-    width: 100px;
-    padding: 10px;
-    border-radius: 20px;
-    border: none;
-}
+    }
 
-.footer-redes {
-    grid-area: social-media;
-    display: flex;
-    gap: 20px;
-    justify-content: flex-end;
-}
+    footer p {
+        grid-area: copyright;
+    }
 
-.footer-redes img {
-    height: 30px;
-}
+    .footer-contacto {
+        grid-area: form;
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        min-width: 0;
+    }
 
-.footer-redes ul {
-    display: flex;
-    gap: 12px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+    .footer-contacto input {
+        width: 100%;
+        min-width: 0;
+        max-width: 320px;
+        border-radius: 20px;
+        border: none;
+        padding: 10px;
+    }
 
-.footer-redes ul li {
-    list-style: none;
+    .footer-contacto button {
+        width: 100px;
+        padding: 10px;
+        border-radius: 20px;
+        border: none;
+    }
+
+    .footer-redes {
+        grid-area: social-media;
+        display: flex;
+        gap: 20px;
+        justify-content: flex-end;
+    }
+
+    .footer-redes img {
+        height: 30px;
+    }
+
+    .footer-redes ul {
+        display: flex;
+        gap: 12px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-redes ul li {
+        list-style: none;
+    }
 }
