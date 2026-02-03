@@ -1,0 +1,10 @@
+# VS Code
+.vscode/
+
+# Windows / Mac
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log

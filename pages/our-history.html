@@ -5,6 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Our History</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/main-styles.css">
 </head>
 
@@ -37,93 +39,99 @@
         </div>
     </header>
     <!-- /////////////////////////////////////////////////// -->
-    <main id="main-history">
-        <h1>Nuestra Historia</h1>
+    <main class="history container py-4" id="main-history">
 
-        <div class="main-container-history">
-            <section aria-labelledby="historia" id="comienzos">
-                <h2 id="historia">Cómo empezó todo</h2>
-                <div class="texto-historia">
-                    <p>Nuestra historia comenzó con una idea simple, pero poderosa: crear ropa que no solo se vea bien, sino que también haga el bien.
-                    Nacimos como un pequeño proyecto impulsado por la preocupación por el impacto ambiental de la industria textil y las ganas de
-                    demostrar que es posible producir de forma más responsable.<br><br>
-                    Desde el primer día, decidimos que cada prenda tenía que tener un propósito. Por eso, destinamos el 15% de cada venta a iniciativas 
-                    de cuidado del medio ambiente, apoyando proyectos de reciclaje, reforestación y concientización ambiental. Creemos que cada compra 
-                    puede ser una oportunidad para generar un cambio positivo. Con el tiempo, la comunidad fue creciendo, al igual que nuestro compromiso. <br><br>
-                    Hoy seguimos trabajando con la misma convicción con la que empezamos: ofrecer ropa de calidad, con diseño y conciencia, apostando a un futuro 
-                    más sostenible para todos. Empezamos en 2021 como un emprendimiento familiar, Con el tiempo abrimos nuevas sucursales.</p>
+        <h1 class="history__title mb-4">Nuestra Historia</h1>
+
+        <div class="history__container d-grid gap-4">
+
+            <!-- ================= COMIENZOS ================= -->
+            <section
+                class="history__section history__section--beginnings d-flex flex-column flex-lg-row align-items-start gap-3 p-4 rounded-3"
+                aria-labelledby="historia" id="comienzos">
+                <h2 class="history__subtitle m-0" id="historia">Cómo empezó todo</h2>
+
+                <div class="history__text w-100">
+                    <p class="text-center text-lg-start text-md-center">
+                        Nuestra historia comenzó con una idea simple, pero poderosa: crear ropa que no solo se vea bien,
+                        sino que también haga el bien.
+                        Nacimos como un pequeño proyecto impulsado por la preocupación por el impacto ambiental de la
+                        industria textil y las ganas de
+                        demostrar que es posible producir de forma más responsable.
+                        <br><br>
+                        Desde el primer día, decidimos que cada prenda tenía que tener un propósito. Por eso, destinamos
+                        el 15% de cada venta a iniciativas
+                        de cuidado del medio ambiente, apoyando proyectos de reciclaje, reforestación y concientización
+                        ambiental.
+                        <br><br>
+                        Hoy seguimos trabajando con la misma convicción con la que empezamos: ofrecer ropa de calidad,
+                        con diseño y conciencia, apostando a un futuro
+                        más sostenible para todos.
+                    </p>
                 </div>
             </section>
 
-            <!--  -->
-            <section aria-labelledby="mision-vision-valores" id="misionvisionvalores">
-                <div class="misionvisionvalores-container">
+            <!-- ================= MISIÓN / VISIÓN / VALORES ================= -->
+            <section class="history__section history__section--values my-4" aria-labelledby="mision-vision-valores"
+                id="misionvisionvalores">
+                <div class="history__values-container row g-4 justify-content-center">
 
-                    <article>
-                        <h3>Misión</h3>
-                        <p>Diseñar y producir prendas de vestir de calidad, combinando estilo y responsabilidad ambiental. 
-                            Buscamos generar un impacto positivo destinando el 15% de cada venta a proyectos que protejan y 
-                            cuiden el medio ambiente, promoviendo un consumo más consciente y sostenible.
-                            Trabajamos con materiales seleccionados y procesos responsables, apostando a una relación honesta
-                            con nuestros clientes y con el entorno que nos rodea.</p>
+                    <article class="history__card col-12 col-lg-4 text-md-center">
+                        <div class="h-100 p-4 rounded-3">
+                            <h3 class="history__card-title">Misión</h3>
+                            <p class="history__card-text mb-0">
+                                Diseñar y producir ropa de calidad, combinando estilo, comodidad y responsabilidad
+                                ambiental.
+                                Nuestra misión es ofrecer prendas con identidad propia, creadas de forma consciente,
+                                demostrando que la moda también puede ser parte del cambio.
+                                Por eso destinamos el 15% de cada venta a proyectos vinculados al cuidado de la
+                                naturaleza, apoyando iniciativas de reforestación, reciclaje y protección del
+                                medioambiente.
+                                Creemos que cada compra puede generar un impacto positivo en el planeta.
+                            </p>
+                        </div>
                     </article>
 
-                    <!--  -->
-                    <article>
-                        <h3>Visión</h3>
-                        <p>
-                            Nuestra visión es convertirnos en una marca de referencia en moda sostenible, demostrando que es posible 
-                            crecer como negocio sin descuidar el planeta. Aspiramos a inspirar a más personas y marcas a adoptar 
-                            prácticas responsables y a formar parte activa del cambio hacia una industria textil más comprometida con el medio ambiente. 
-                            Queremos construir una comunidad que valore el diseño, la calidad y el impacto positivo a largo plazo.</p>
+                    <article class="history__card col-12 col-lg-4 text-md-center">
+                        <div class="h-100 p-4 rounded-3">
+                            <h3 class="history__card-title">Visión</h3>
+                            <p class="history__card-text mb-0">
+                                Nuestra visión es convertirnos en una marca referente en moda sostenible, inspirando a
+                                más personas a elegir un consumo responsable.
+                                Buscamos crecer sin dejar de lado nuestro compromiso con la Tierra, demostrando que es
+                                posible desarrollar un negocio alineado con valores ambientales reales.
+                                A través de la calidad, el diseño y la contribución del 15% de cada venta a acciones
+                                ecológicas, queremos construir una comunidad que valore la moda con propósito y el
+                                futuro del planeta.
+                            </p>
+                        </div>
                     </article>
 
-                    <!--  -->
-                    <article>
-                        <h3>Valores</h3>
-                        <ul>
-                            <li><span>Compromiso ambiental:</span> Actuamos con responsabilidad, destinando parte de nuestros ingresos al cuidado del planeta.</li>
-                            <li><span>Transparencia:</span> Comunicamos de forma clara cómo producimos y cómo impactan nuestras acciones.</li>
-                            <li><span>Innovación:</span> Buscamos constantemente nuevas formas de mejorar nuestros procesos y reducir nuestro impacto ambiental.</li>
-                        </ul>
+                    <article class="history__card col-12 col-lg-4 text-md-center">
+                        <div class="h-100 p-4 rounded-3">
+                            <h3 class="history__card-title">Valores</h3>
+                            <br>
+                            <ul class="history__list mb-0 ps-0 d-flex flex-column">
+                                <li class="history__list-item">
+                                    <span class="history__highlight">Compromiso ambiental:</span>
+                                    Actuamos con responsabilidad, destinando parte de cada venta al cuidado de la naturaleza y apoyando proyectos sostenibles.
+                                </li>
+                                <li class="history__list-item">
+                                    <span class="history__highlight">Transparencia:</span>
+                                    Comunicamos de forma clara cómo producimos, cómo trabajamos y cuál es el impacto positivo que buscamos generar.
+                                </li>
+                                <li class="history__list-item">
+                                    <span class="history__highlight">Innovación:</span>
+                                    Buscamos constantemente nuevas formas de mejorar nuestros procesos y reducir nuestro impacto ambiental sin perder calidad ni diseño.
+                                </li>
+                            </ul>
+                        </div>
                     </article>
+
                 </div>
             </section>
-
-            <section aria-labelledby="equipo" id="equipo-containter">
-                <h2 id="equipo">Nuestro Equipo</h2>
-
-                <div class="equipo-article-container">
-                    <article class="miembro-equipo">
-                        <img src="../assets/imgs/camara-generica.jpg" alt="Foto de Persona 1" />
-                        <div class="texto-persona">
-                            <h3>Persona 1</h3>
-                            <p>Rol: Fundador/a</p>
-                            <p>Breve descripción o aporte dentro del proyecto.</p>
-                        </div>
-                    </article>
-                    
-                    <article class="miembro-equipo">
-                        <img src="../assets/imgs/camara-generica.jpg" alt="Foto de Persona 2" />
-                        <div class="texto-persona">
-                            <h3>Persona 2</h3>
-                            <p>Rol: Atención al cliente</p>
-                            <p>Breve descripción o aporte dentro del proyecto.</p>
-                        </div>
-                    </article>
-                    
-                    <article class="miembro-equipo">
-                        <img src="../assets/imgs/camara-generica.jpg" alt="Foto de Persona 3" />
-                        <div class="texto-persona">
-                            <h3>Persona 3</h3>
-                            <p>Rol: Producción / Ventas</p>
-                            <p>Breve descripción o aporte dentro del proyecto.</p>
-                        </div>
-                    </article>
-                </div>
-            </section>
-        </div>
     </main>
+
 
     <!-- /////////////////////////////////////////////////// -->
     <footer>
@@ -147,4 +155,5 @@
         </div>
     </footer>
 </body>
+
 </html>

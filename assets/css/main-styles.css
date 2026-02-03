@@ -1011,17 +1011,17 @@ FIN INDEX MOBILE
 
 /* Productos //////////////////////////////////////////////////////////////////////////////////////////////////*/
 .products {
-  padding-top: 40px;
+    padding-top: 40px;
 }
 
 .products__filters-bar {
-  background-color: orange;
-  color: white;
+    background-color: orange;
+    color: white;
 }
 
 .products__filters-form {
-  display: flex;
-  width: 100%;
+    display: flex;
+    width: 100%;
 }
 
 .products__filter {
@@ -1031,199 +1031,252 @@ FIN INDEX MOBILE
 }
 
 .products__select {
-  display: flex;
-  width: 50%;
+    display: flex;
+    width: 50%;
 }
 
 /****************FIN FILTROS****************/
 .product-card {
-  height: 100%;
-  background-color: var(--main-green);
-  transition: .3s;
-  color: white;
-  text-align: left;
+    height: 100%;
+    background-color: var(--main-green);
+    transition: .3s;
+    color: white;
+    text-align: left;
 }
 
 .product-card:hover {
-  background-color: rgb(85, 144, 113);
-  box-shadow: 3px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    background-color: rgb(85, 144, 113);
+    box-shadow: 3px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .card-img-top {
-  padding: 5px;
+    padding: 5px;
 }
 
 .card-text {
-  height: 100px;
-  overflow: hidden;
+    height: 100px;
+    overflow: hidden;
 }
 
 .product-card .btn {
-  background-color: rgb(244, 247, 244);
-  color: black;
-  border: none;
-  transition: .3s;
-  border-radius: 99px;
-  padding: 10px 20px;
-  margin-top: 0;
+    background-color: rgb(244, 247, 244);
+    color: black;
+    border: none;
+    transition: .3s;
+    border-radius: 99px;
+    padding: 10px 20px;
+    margin-top: 0;
 }
 
 .product-card .btn:hover {
-  background-color: orange;
+    background-color: orange;
 }
 
 /* "proximamente" */
 .products__coming-soon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-  margin: 100px 0px;
-  background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    margin: 100px 0px;
+    background-color: orange;
 }
 
 .products__coming-soon-title {
-  color: white;
-  letter-spacing: 5px;
+    color: white;
+    letter-spacing: 5px;
 }
 
 
 /*Fin Productos //////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 /* Historia //////////////////////////////////////////////////////////////////////////////////////////////////*/
-#main-history {
+.history {
     padding-top: 40px;
     color: white;
     font-family: "Caviar-Bold";
 }
 
-#main-history h1 {
-    display: flex;
+
+
+.history__title {
+    display: block;
+    width: 100%;
     padding-left: 30px;
     background-color: orange;
     color: white;
+    margin: 0;
 }
 
-.main-container-history {
-    padding-top: 80px;
+/* CONTENEDOR GENERAL */
+
+.history__container {
+    padding-top: 20px;
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 30px;
-
+    grid-template-columns: 1fr;
 }
 
-/* Primer sección */
-#comienzos {
+
+/* ========================================= */
+/* ========== SECCIÓN COMIENZOS ============ */
+/* ========================================= */
+
+.history__section--beginnings {
     background-color: rgb(63, 124, 94);
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px;
 
+    padding: 30px;
+    gap: 30px;
 }
 
-.texto-historia {
+/* Subtitulo "Cómo empezó todo" */
+.history__subtitle {
+    font-size: 35px;
+    margin: 0;
+    align-self: center;
+}
+
+/* Texto */
+.history__text {
     width: 70%;
-    gap: 10px;
     text-align: left;
+
     letter-spacing: 1.5px;
     line-height: 1.5;
 }
 
 
-/* Segunda sección */
-#misionvisionvalores {
-    margin-top: 70px;
+/* ========================================= */
+/* ====== MISIÓN / VISIÓN / VALORES ======== */
+/* ========================================= */
+
+
+.history__section--values {
+    margin-bottom: 70px;
+    padding-top: 70px;
     display: flex;
     justify-content: center;
-    margin-bottom: 70px;
 }
 
-.misionvisionvalores-container {
+/* Row bootstrap */
+.history__values-container {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    width: 80%;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 50px;
 }
 
-#misionvisionvalores article {
+/* Cards */
+.history__card {
     background-color: rgb(63, 124, 94);
-    width: 33%;
-    padding: 50px;
     border: 2px solid black;
+
     display: flex;
     flex-direction: column;
     gap: 30px;
+
+    flex: 1 1 500px; 
 }
 
-#misionvisionvalores article h3 {
+/* Titulos dentro */
+.history__card-title {
     font-size: 30px;
 }
 
-#misionvisionvalores ul {
+/* Lista */
+.history__list {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
+    padding: 0;
+    margin: 0;
 }
 
-#misionvisionvalores ul li {
+/* Items */
+.history__list-item {
     list-style: none;
+    text-align: left;   
 }
 
-span {
+/* Highlight naranja */
+.history__highlight {
     background-color: orange;
+    padding: 2px 6px;
 }
 
-/* Tercera sección */
-#equipo {
+
+/* ========================================= */
+/* =============== EQUIPO ================== */
+/* ========================================= */
+
+/* Subtitulo "Nuestro Equipo" */
+.history__section--team .history__subtitle {
     background-color: orange;
-    width: 93.5%;
-}
-
-#equipo-containter {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
 }
 
-.equipo-article-container {
+/* Contenedor cards */
+.history__team-container {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap; /* 🔥 responsive */
+
     gap: 30px;
     margin-top: 30px;
     margin-bottom: 70px;
 }
 
-.miembro-equipo {
+/* Card miembro */
+.history__member {
     display: flex;
     background-color: rgb(63, 124, 94);
-    width: 30%;
-    height: 300px;
+
     border: 1px solid black;
     text-align: left;
+
+    width: 320px;     height: 300px;
 }
 
-.miembro-equipo img {
+/* Imagen */
+.history__member-img {
     width: 50%;
     height: 100%;
+    object-fit: cover;
 }
 
-.texto-persona {
+/* Texto persona */
+.history__member-info {
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding: 20px;
 }
 
+.history__member-name {
+    margin: 0;
+    font-size: 20px;
+}
+
+.history__member-role,
+.history__member-desc {
+    margin: 0;
+}
+
 /* FIN HISTORIA */
 
 /* Branches //////////////////////////////////////////////////////////////////////////////////////////////////*/
-#branches-main {
+.branches {
     padding-top: 40px;
 }
 
-#branches-main h1 {
+.branches__title {
     background-color: orange;
     color: white;
     text-align: left;
@@ -1238,67 +1291,64 @@ span {
     margin-top: 40px;
 }
 
-.container-sucursales {
+.branches__container {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 80px;
 }
 
-.sucursal {
+.branches__item {
     border: 2px solid lightgray;
     margin-top: 30px;
     width: 80%;
     height: 300px;
     display: flex;
     cursor: pointer;
-    transition: .3s;
+    transition: 0.3s;
 }
 
-.sucursal:hover,
-.sucursales-texto-container:hover {
+.branches__item:hover,
+.branches__info:hover {
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
     background-color: rgb(85, 144, 113);
 }
 
-.sucursales-texto-container {
+.branches__info {
     background-color: rgb(63, 124, 94);
     color: white;
     display: flex;
     flex-direction: column;
     width: 100%;
     text-align: left;
-    padding: 30px;
+    padding: 50px;
+    justify-content: center;
     gap: 40px;
-    transition: .3s;
+    transition: 0.3s;
 }
 
-.sucursal iframe {
+.branches__map {
     height: 100%;
+    border: 0;
 }
 
-.container-imagen-ubic-branches-1 {
+.branches__image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 30%;
+}
+
+.branches__image--1 {
     background-image: url("../imgs/local1.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 30%;
 }
 
-.container-imagen-ubic-branches-2 {
+.branches__image--2 {
     background-image: url("../imgs/local2.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 30%;
 }
 
-.container-imagen-ubic-branches-3 {
+.branches__image--3 {
     background-image: url("../imgs/local3.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 30%;
 }
 
 /* Fin Branches //////////////////////////////////////////////////////////////////////////////////////////////////*/
